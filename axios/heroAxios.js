@@ -19,3 +19,17 @@ export const login = async (email, password) => {
     return data;
   }
 };
+
+export const getHeroe = (query) => {
+  axios
+    .get(
+      `https://www.superheroapi.com/api.php/2346221928841902/search/${query}`
+    )
+    .then((res) => {
+      console.log('response= ', res);
+    })
+    .catch((err) => {
+      setLoading(true);
+      console.log(err.response);
+    });
+};
