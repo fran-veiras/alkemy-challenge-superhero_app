@@ -8,7 +8,6 @@ import {
 import { Image } from '@chakra-ui/image';
 import { Box, Flex, GridItem, Heading, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
-import React, { useState } from 'react';
 
 export const Heroes = (props) => {
   const { name, image, orientation, setIds, hero, ids } = props;

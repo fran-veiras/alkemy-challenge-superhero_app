@@ -15,7 +15,7 @@ import { Heroes } from '../../components/newTeamComponents/Heroes';
 import { NavBar } from '../../components/navBar';
 import { Input } from '@chakra-ui/input';
 import { useRouter } from 'next/dist/client/router';
-import { CurrentList } from '../../components/newTeamComponents/list';
+import { CurrentList } from '../../components/newTeamComponents/List';
 
 export default function Newteam() {
   const route = useRouter();
@@ -24,12 +24,44 @@ export default function Newteam() {
   const [heroes, setHeroes] = useState(null);
   const [ids, setIds] = useState([]);
   const [teamName, setTeamName] = useState(null);
+  // totalPowerStats
+
+  const [power, setPower] = useState([]);
+  const [numbers, setNumbers] = useState([]);
+  const [values, setValues] = useState([]);
+  const [totalPower, setTotalPower] = useState([]);
+
+  useEffect(() => {
+    ids !== null &&
+      ids.map((val) => {
+        setPower(numbers);
+      });
+  }, [numbers]);
+
+  useEffect(() => {
+    const res = power.filter(Number);
+    //check
+    ids !== null &&
+      ids.length === 6 &&
+      res.map((val) => {
+        setValues((cat) => [...cat, parseInt(val, 10)]);
+      });
+  }, [power]);
+
+  useEffect(() => {
+    const sumValues = values !== null && values.reduce((a, b) => a + b, 0);
+    setTotalPower(sumValues);
+  }, [values]);
 
   useEffect(() => {
     getHeroe(name).then((res) => {
       setHeroes(res);
     });
   }, [name]);
+
+  useEffect(() => {
+    totalPower > 0 && saveTeamValue() & setIds('') & route.replace('/');
+  }, [totalPower]);
 
   const getTeams = () => {
     if (
@@ -44,17 +76,14 @@ export default function Newteam() {
 
   const [saveTeam, setSaveTeam] = useState(getTeams());
 
-  useEffect(() => {
-    ids !== null &&
-      ids.length === 6 &&
-      saveTeamValue() & setIds(null) & route.replace('/');
-  }, [ids]);
-
   const saveTeamValue = () => {
     if (saveTeam !== null) {
-      setSaveTeam((cat) => [...cat, { teamName: teamName, ids: ids }]);
+      setSaveTeam((cat) => [
+        ...cat,
+        { teamName: teamName, ids: ids, totalPower: totalPower },
+      ]);
     } else {
-      setSaveTeam([{ teamName: teamName, ids: ids }]);
+      setSaveTeam([{ teamName: teamName, ids: ids, totalPower: totalPower }]);
     }
   };
 
@@ -185,6 +214,7 @@ export default function Newteam() {
           <Box display="flex" flexDir="row" alignItems="center">
             {ids !== null &&
               ids !== undefined &&
+              ids.length !== 0 &&
               ids.map((val) => (
                 <>
                   <CurrentList
@@ -195,6 +225,9 @@ export default function Newteam() {
                     setIds={setIds}
                     ids={ids}
                     val={val}
+                    setNumbers={setNumbers}
+                    powerstats={val.powerstats}
+                    numbers={numbers}
                   />
                   <Center background="green.300" height="40px" width="1px">
                     <Divider orientation="vertical" />
