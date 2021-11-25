@@ -151,7 +151,8 @@ export const BoxRight = () => {
               >
                 Log in
               </Button>
-              {(info.email !== undefined) & (info.password !== undefined) &&
+              {info.email !== undefined &&
+                info.password !== undefined &&
                 token.error && (
                   <Flex alignItems="center" justifyContent="center" my={3}>
                     <Text textAlign="center" mr={2} color="green.300">
