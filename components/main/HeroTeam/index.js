@@ -17,14 +17,22 @@ export const HeroTeam = ({ title, ids, totalPower, newTeams, setNewTeams }) => {
   }
 
   useEffect(() => {
-    newTeams.length !== 0 &&
+    newTeams !== null &&
       localStorage.setItem('teams', JSON.stringify(newTeams));
   }, [newTeams]);
 
   return (
     <Flex flexDir="column" my={5} background="green.300" p={3}>
       <PowerStats totalPower={totalPower} title={title} />
-      <Box display="flex" flexDir="row" gridGap={2}>
+      <Box
+        display="flex"
+        flexDir={{
+          base: 'column',
+          md: 'row', // 48em-80em,
+          xl: 'row', // 80em+
+        }}
+        gridGap={2}
+      >
         {ids.map((cat) => (
           <Cards
             key={cat.id}

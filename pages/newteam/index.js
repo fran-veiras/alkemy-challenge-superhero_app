@@ -69,6 +69,12 @@ export default function Newteam() {
     });
   }, [name]);
 
+  useEffect(() => {
+    typeof localStorage !== 'undefined' &&
+      localStorage.getItem('token') === null &&
+      route.replace('/login');
+  }, []);
+
   const getTeams = () => {
     if (
       typeof localStorage !== 'undefined' &&
@@ -121,6 +127,8 @@ export default function Newteam() {
     e.key === 'Enter' && setPopUp(!true);
   };
 
+  const [align, setAlign] = useState([]);
+
   return (
     <>
       <NavBar />
@@ -158,7 +166,14 @@ export default function Newteam() {
             </Box>
           </Flex>
           <Request setName={setName} />
-          <Grid gridGap={5} gridTemplateColumns="repeat(5, 1fr)">
+          <Grid
+            gridGap={5}
+            gridTemplateColumns={{
+              base: 'repeat(2, 1fr)',
+              md: 'repeat(5, 1fr)', // 48em-80em,
+              xl: 'repeat(5, 1fr)', // 80em+
+            }}
+          >
             {heroes !== null &&
               heroes !== undefined &&
               heroes.map((cat) => (
@@ -171,6 +186,8 @@ export default function Newteam() {
                   name={cat.name}
                   hero={cat}
                   orientation={cat.biography.alignment}
+                  align={align}
+                  setAlign={setAlign}
                 />
               ))}
           </Grid>
@@ -223,7 +240,14 @@ export default function Newteam() {
             },
           }}
         >
-          <Text my={1} fontSize="md" fontWeight="bold" color="#000" p={3}>
+          <Text
+            display="inline-block"
+            my={1}
+            fontSize="md"
+            fontWeight="bold"
+            color="#000"
+            p={3}
+          >
             Your Current Team
           </Text>
           <Center background="green.300" height="40px" width="2px">

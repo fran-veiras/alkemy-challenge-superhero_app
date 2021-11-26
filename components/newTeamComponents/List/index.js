@@ -38,6 +38,11 @@ export const CurrentList = (props) => {
       _hover={{
         background: 'green.300',
       }}
+      minW={{
+        base: '70%',
+        md: '0px', // 48em-80em,
+        xl: '0px', // 80em+
+      }}
       transition="ease 0.3s"
       cursor="pointer"
       onClick={togglerDelete}

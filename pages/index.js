@@ -10,7 +10,7 @@ import { HeroTeam } from '../components/main/HeroTeam';
 export default function Home() {
   const route = useRouter();
   const [teams, setTeams] = useState([]);
-  const [newTeams, setNewTeams] = useState([]);
+  const [newTeams, setNewTeams] = useState(null);
 
   useEffect(() => {
     typeof localStorage !== 'undefined' &&
