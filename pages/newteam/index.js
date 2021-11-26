@@ -33,19 +33,25 @@ export default function Newteam() {
 
   useEffect(() => {
     ids !== null &&
+      ids.length === 6 &&
       ids.map((val) => {
-        setPower(numbers);
+        setPower((cat) => [
+          ...cat,
+          val.powerstats.intelligence,
+          val.powerstats.durability,
+          val.powerstats.combat,
+          val.powerstats.power,
+          val.powerstats.speed,
+          val.powerstats.strength,
+        ]);
       });
-  }, [numbers]);
+  }, [ids]);
 
   useEffect(() => {
     const res = power.filter(Number);
-    //check
-    ids !== null &&
-      ids.length === 6 &&
-      res.map((val) => {
-        setValues((cat) => [...cat, parseInt(val, 10)]);
-      });
+    res.map((val) => {
+      setValues((cat) => [...cat, parseInt(val, 10)]);
+    });
   }, [power]);
 
   useEffect(() => {
@@ -54,14 +60,14 @@ export default function Newteam() {
   }, [values]);
 
   useEffect(() => {
+    (ids !== null) & (ids.length === 6) & (totalPower !== 0) && saveTeamValue();
+  }, [totalPower]);
+
+  useEffect(() => {
     getHeroe(name).then((res) => {
       setHeroes(res);
     });
   }, [name]);
-
-  useEffect(() => {
-    totalPower > 0 && saveTeamValue() & setIds('') & route.replace('/');
-  }, [totalPower]);
 
   const getTeams = () => {
     if (
@@ -77,14 +83,26 @@ export default function Newteam() {
   const [saveTeam, setSaveTeam] = useState(getTeams());
 
   const saveTeamValue = () => {
-    if (saveTeam !== null) {
-      setSaveTeam((cat) => [
-        ...cat,
-        { teamName: teamName, ids: ids, totalPower: totalPower },
-      ]);
-    } else {
-      setSaveTeam([{ teamName: teamName, ids: ids, totalPower: totalPower }]);
-    }
+    var p1 = new Promise(function (res, rej) {
+      if (saveTeam !== null) {
+        res(
+          setSaveTeam((cat) => [
+            ...cat,
+            { teamName: teamName, ids: ids, totalPower: totalPower },
+          ])
+        );
+      } else {
+        res(
+          setSaveTeam([
+            { teamName: teamName, ids: ids, totalPower: totalPower },
+          ])
+        );
+      }
+    });
+
+    p1.then(function () {
+      setIds('') & route.replace('/');
+    });
   };
 
   useEffect(() => {
@@ -225,9 +243,6 @@ export default function Newteam() {
                     setIds={setIds}
                     ids={ids}
                     val={val}
-                    setNumbers={setNumbers}
-                    powerstats={val.powerstats}
-                    numbers={numbers}
                   />
                   <Center background="green.300" height="40px" width="1px">
                     <Divider orientation="vertical" />

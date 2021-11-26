@@ -6,19 +6,6 @@ import React, { useEffect, useState } from 'react';
 export const CurrentList = (props) => {
   const { id, name, img, setIds, val, ids, setNumbers, powerstats } = props;
 
-  useEffect(() => {
-    ids !== undefined &&
-      setNumbers((cat) => [
-        ...cat,
-        powerstats.intelligence,
-        powerstats.durability,
-        powerstats.combat,
-        powerstats.power,
-        powerstats.speed,
-        powerstats.strength,
-      ]);
-  }, [powerstats]);
-
   const [deleteOn, setDeleteOn] = useState(false);
 
   const togglerDelete = () => {

@@ -28,9 +28,6 @@ export const NavBar = () => {
               <Text cursor="pointer">Home</Text>
             </a>
           </Box>
-          <Box>
-            <Text cursor="pointer">Searcher</Text>
-          </Box>
         </Square>
         <Square>
           <Box>

@@ -10,6 +10,7 @@ import { HeroTeam } from '../components/main/HeroTeam';
 export default function Home() {
   const route = useRouter();
   const [teams, setTeams] = useState([]);
+  const [newTeams, setNewTeams] = useState([]);
 
   useEffect(() => {
     typeof localStorage !== 'undefined' &&
@@ -21,7 +22,7 @@ export default function Home() {
 
       setTeams(res);
     }
-  }, []);
+  }, [, newTeams]);
 
   return (
     <>
@@ -47,7 +48,14 @@ export default function Home() {
           {teams !== null &&
             teams !== undefined &&
             teams.map((cat) => (
-              <HeroTeam key={cat.teamName} title={cat.teamName} ids={cat.ids} />
+              <HeroTeam
+                key={cat.teamName}
+                title={cat.teamName}
+                ids={cat.ids}
+                totalPower={cat.totalPower}
+                setNewTeams={setNewTeams}
+                newTeams={newTeams}
+              />
             ))}
         </Flex>
       </Container>

@@ -14,29 +14,14 @@ export const Cards = (props) => {
   const {
     image,
     name,
-    powerstats,
+
     appearance,
     work,
     alias,
-    setNumbers,
-    numbers,
   } = props;
 
-  useEffect(() => {
-    numbers.length === 0 &&
-      setNumbers((cat) => [
-        ...cat,
-        powerstats.intelligence,
-        powerstats.durability,
-        powerstats.combat,
-        powerstats.power,
-        powerstats.speed,
-        powerstats.strength,
-      ]);
-  }, []);
-
   return (
-    <GridItem background="green.100" position="relative">
+    <GridItem background="green.100" position="relative" my={3}>
       <Flex h="full">
         <Accordion
           allowMultiple
@@ -108,10 +93,9 @@ export const Cards = (props) => {
           justifyContent="space-between"
         >
           <Image flexWrap="wrap" alt="heroe" src={image.url} />
-          <Text display="inline" fontSize="medium" color="#000">
+          <Text display="inline" fontSize="medium" color="#000" p={3}>
             {name}
           </Text>
-          <Button>Delete</Button>
         </Flex>
       </Flex>
     </GridItem>
