@@ -7,6 +7,7 @@
 ## Home
 > En la home el usuario puede ver los equipos creados y si desea tiene acceso a eliminarlos, 
 > estos son recibidos desde el localStorage y poseen la siguiente información de cada heroe:
+
 <hr />
 ● Peso.
 ● Altura.
@@ -16,7 +17,13 @@
 ● Color de cabello.
 ● Lugar de trabajo.
 
+<hr />
+<hr />
+
 > Además cada equipo cuenta con un total de poder que es la suma de los siguientes powerstats de cada hereoe que lo conforma: 
+
+
+<hr />
 ● Intelligence.
 ● Strength.
 ● Speed.
