@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Login con formik
+> Las validaciones del formulario están desarrolladas con Formik, se solicita el tokenID a la API de alkemy.
+> email: challenge@alkemy.org password: react
 
-## Getting Started
+![This is an image](https://i.ibb.co/7gL6RF1/Captura-de-Pantalla-2021-11-26-a-la-s-12-35-48.png)
 
-First, run the development server:
+## Home
+> En la home el usuario puede ver los equipos creados y si desea tiene acceso a eliminarlos, 
+> estos son recibidos desde el localStorage y poseen la siguiente información de cada heroe:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<hr />
+● Peso.
+● Altura.
+● Nombre.
+● Alias.
+● Color de ojos.
+● Color de cabello.
+● Lugar de trabajo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr />
+<hr />
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+> Además cada equipo cuenta con un total de poder que es la suma de los siguientes powerstats de cada hereoe que lo conforma: 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<hr />
+● Intelligence.
+● Strength.
+● Speed.
+● Durability.
+● Power.
+● Combat.
+<hr />
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![This is an image](https://i.ibb.co/P6HGVHv/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
 
-## Learn More
+## Buscador y creador de equipos
+> El buscador y creador de la aplicaión hace una petición a SuperHero API con la bsuqueda realizada por el usuario, cada card que se recibe trae el heroe, su nombre y su orientación, buena o mala. 
+> El mismo no permite agregar de forma repetida a un heroe. El usuario solo podrá seleccionar tres heroes con buena orientación y tres con mala.
+> Además se puede quitar a los hereoes del current team para agregar otro. 
 
-To learn more about Next.js, take a look at the following resources:
+<hr />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![This is an image](https://i.ibb.co/myQLpvL/Captura-de-Pantalla-2021-11-26-a-la-s-14-34-35.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
