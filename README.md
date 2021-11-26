@@ -25,5 +25,6 @@ Cada heroe cuanta con una barra de información desplegable en donde se encuentr
 
 <hr />
 > En la parte inferior hay una barra llamada "Your Current Team" en esta se puede ver y eliminar si se desea, a los heroes seleccionados.
+> Solo se pueden agregar 3 heroes con orientación buena y 3 con mala. No se puede seleccionar dos veces el mismo heroe.
 
-![This is an image](https://i.ibb.co/P6HGVHv/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
+![This is an image](https://i.ibb.co/ns1NhrC/Captura-de-Pantalla-2021-11-26-a-la-s-14-25-13.png)
