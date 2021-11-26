@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## IMPORTANTE
+antes de empezar a utilizar la aplicación, es importante permitir contenido no seguro, ya que las credenciales del login se obtienen de una ruta http
+![This is an image](https://i.ibb.co/MskWy9G/Captura-de-Pantalla-2021-11-26-a-la-s-18-59-02.png)
+![This is an image](https://i.ibb.co/QCV71w0/Captura-de-Pantalla-2021-11-26-a-la-s-18-59-38.png)
 
-## Getting Started
+## Login
+Las petición de las credenciales se realizan con Axios y el formulario cuenta con Formik integrado para el manejo de eventos.
+El usuario no puede acceder a ninguna de las rutas sin previamente pasar por el login.
+<hr />
+> Email: challenge@alkemy.org Password: react
 
-First, run the development server:
+## Home
+Esta cuenta con un dashboard donde se muestran los equipos creados, estos presentan el poder total del equipo (suma total de powerstats de cada uno de los integrantes, powerstats, intelligence, strength, speed, durability, power, combat)
+<hr />
+- Además, cada heroe cuenta con infomación extra, Weight & height, Aliases, Eye color, Hair color,Work
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+> Todos los equipos son recibidos del localStorage y tienen la opción de ser eliminados.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr />
+![This is an image](https://i.ibb.co/P6HGVHv/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Creador de equipos y buscador de heroes
+El creador de equipos cuenta con un buscador de heroes integrados, estos son recibidos desde SuperHero API cuando el usuario realiza una busqueda. 
+Cada heroe cuanta con una barra de información desplegable en donde se encuentra nombre y orientación del heroe.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<hr />
+> En la parte inferior hay una barra llamada "Your Current Team" en esta se puede ver y eliminar si se desea, a los heroes seleccionados.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![This is an image](https://i.ibb.co/P6HGVHv/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
