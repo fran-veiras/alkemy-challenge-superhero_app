@@ -1,6 +1,6 @@
 ## Login con formik
 > Las validaciones del formulario están desarrolladas con Formik, se solicita el tokenID a la API de alkemy.
-(https://i.ibb.co/S68kt5t/Captura-de-Pantalla-2021-11-26-a-la-s-12-30-05.png)
+![This is an image](https://i.ibb.co/S68kt5t/Captura-de-Pantalla-2021-11-26-a-la-s-12-30-05.png)
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
