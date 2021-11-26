@@ -31,4 +31,6 @@
 ● Power.
 ● Combat.
 
+<hr />
+
 ![This is an image](https://i.ibb.co/9r5Hd5k/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
