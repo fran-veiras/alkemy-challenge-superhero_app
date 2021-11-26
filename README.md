@@ -2,7 +2,7 @@
 > Las validaciones del formulario están desarrolladas con Formik, se solicita el tokenID a la API de alkemy.
 > email: challenge@alkemy.org password: react
 
-![This is an image](https://i.ibb.co/f8LPn7x/Captura-de-Pantalla-2021-11-26-a-la-s-12-35-48.png)
+![This is an image](https://i.ibb.co/7gL6RF1/Captura-de-Pantalla-2021-11-26-a-la-s-12-35-48.png)
 
 ## Home
 > En la home el usuario puede ver los equipos creados y si desea tiene acceso a eliminarlos, 
@@ -31,7 +31,7 @@
 ● Combat.
 <hr />
 
-![This is an image](https://i.ibb.co/9r5Hd5k/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
+![This is an image](https://i.ibb.co/P6HGVHv/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
 
 ## Buscador y creador de equipos
 > El buscador y creador de la aplicaión hace una petición a SuperHero API con la bsuqueda realizada por el usuario, cada card que se recibe trae el heroe, su nombre y su orientación, buena o mala. 
