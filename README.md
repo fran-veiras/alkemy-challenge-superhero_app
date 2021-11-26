@@ -8,7 +8,6 @@
 > En la home el usuario puede ver los equipos creados y si desea tiene acceso a eliminarlos, 
 > estos son recibidos desde el localStorage y poseen la siguiente información de cada heroe:
 
-
 <hr />
 ● Peso.
 ● Altura.
@@ -30,7 +29,6 @@
 ● Durability.
 ● Power.
 ● Combat.
-
 <hr />
 
 ![This is an image](https://i.ibb.co/9r5Hd5k/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
