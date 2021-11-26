@@ -40,7 +40,7 @@
 
 <hr />
 
-![This is an image](https://i.ibb.co/QFH3s9d/Captura-de-Pantalla-2021-11-26-a-la-s-14-25-13.png)
+![This is an image](https://i.ibb.co/5jqNZYN/Captura-de-Pantalla-2021-11-26-a-la-s-14-34-35.png)
 
 
 
