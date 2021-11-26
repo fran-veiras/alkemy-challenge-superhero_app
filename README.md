@@ -32,3 +32,15 @@
 <hr />
 
 ![This is an image](https://i.ibb.co/9r5Hd5k/Captura-de-Pantalla-2021-11-26-a-la-s-12-40-51.png)
+
+## Buscador y creador de equipos
+> El buscador y creador de la aplicaión hace una petición a SuperHero API con la bsuqueda realizada por el usuario, cada card que se recibe trae el heroe, su nombre y su orientación, buena o mala. 
+> El mismo no permite agregar de forma repetida a un heroe. El usuario solo podrá seleccionar tres heroes con buena orientación y tres con mala.
+> Además se puede quitar a los hereoes del current team para agregar otro. 
+
+<hr />
+
+![This is an image](https://i.ibb.co/QFH3s9d/Captura-de-Pantalla-2021-11-26-a-la-s-14-25-13.png)
+
+
+
