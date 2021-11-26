@@ -1,14 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Login con formik
+> Las validaciones del formulario están desarrolladas con Formik, se solicita el tokenID a la API de alkemy.
+![This is an image](https://vercel.com/17901112-a6e0-4b09-a04f-9dae16c9dce6)
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
