@@ -13,38 +13,39 @@ export const Heroes = (props) => {
   const { name, image, orientation, setIds, hero, ids, align, setAlign } =
     props;
 
-  function contadorElemento(values, search) {
-    let acum = 0;
+  const rest = ids.map((val) => val.biography.alignment);
 
-    for (let i = 0; i < values.length; i++) {
-      for (let j = 0; j < values[i].length; j++) {
-        if (values[i][j] === search) {
-          acum++;
-        }
-      }
-    }
-    return acum;
-  }
+  const arr = rest.reduce(
+    (map, word) => ({ ...map, [word]: (map[word] || 0) + 1 }),
+    { good: 0, bad: 0 }
+  );
 
   const saveIds = () => {
     if (ids.length === 0) {
       setIds((cat) => [...cat, hero]);
       setAlign((cat) => [...cat, [hero.biography.alignment]]);
+    } else if (ids.includes(hero)) {
+      return;
     } else {
-      if (ids.includes(hero)) {
-        return;
-      } else if (contadorElemento(align, orientation) < 3) {
-        setIds((cat) => [...cat, hero]);
+      if (
+        (ids.length > 0) &
+        (hero.biography.alignment === 'good') &
+        (arr.good < 3)
+      ) {
         setAlign((cat) => [...cat, [hero.biography.alignment]]);
-      } else {
-        alert(
-          'El equipo solo puede contar con un máximo de 3 heroes de la misma orientación'
-        );
+        setIds((cat) => [...cat, hero]);
+      }
+
+      if (
+        (ids.length > 0) &
+        (hero.biography.alignment === 'bad') &
+        (arr.bad < 3)
+      ) {
+        setAlign((cat) => [...cat, [hero.biography.alignment]]);
+        setIds((cat) => [...cat, hero]);
       }
     }
   };
-
-  console.log(align);
 
   return (
     <GridItem background="#fff" position="relative">

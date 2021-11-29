@@ -107,7 +107,7 @@ export default function Newteam() {
     });
 
     p1.then(function () {
-      setIds('') & route.replace('/');
+      setIds([]) & route.replace('/');
     });
   };
 
